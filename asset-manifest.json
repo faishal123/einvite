@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/faishal123/einvite/static/css/main.37f8206b.css",
+    "main.js": "/faishal123/einvite/static/js/main.792bf88b.js",
+    "static/js/787.28cb0dcd.chunk.js": "/faishal123/einvite/static/js/787.28cb0dcd.chunk.js",
+    "static/media/cover.jpeg": "/faishal123/einvite/static/media/cover.d7033e9ec2bdf85d78f4.jpeg",
+    "index.html": "/faishal123/einvite/index.html",
+    "main.37f8206b.css.map": "/faishal123/einvite/static/css/main.37f8206b.css.map",
+    "main.792bf88b.js.map": "/faishal123/einvite/static/js/main.792bf88b.js.map",
+    "787.28cb0dcd.chunk.js.map": "/faishal123/einvite/static/js/787.28cb0dcd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.37f8206b.css",
+    "static/js/main.792bf88b.js"
+  ]
+}
