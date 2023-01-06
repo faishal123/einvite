@@ -3,7 +3,9 @@ import React, { useEffect, useState } from "react";
 import { useGyroscope } from "../../Utils/gyroscope";
 import { useLocation } from "react-router-dom";
 import Button from "../Button";
-import Flower from "../Button/Flower";
+import Flower from "../Flower";
+import cover from "../../Images/cover.mp4";
+import coverGif from "../../Images/cover.gif";
 import css from "./FirstPage.module.scss";
 
 function useQuery() {
@@ -29,15 +31,27 @@ const FirstPage: React.FC<FirstPagePropTypes> = ({ onClickCta }) => {
       <div className={css.imageContainer}></div>
       <div className={css.greyBackground1}>
         <div className={css.textPosition}>
-          <div className="basic-text-shadow-3 font-bodoni-moda font-18 margin--xlarge-b font-base-white font-letter-spacing-3">
+          <div className="basic-text-shadow-3 font-bodoni-moda font-15 margin--xlarge-b font-base-white font-letter-spacing-3">
             THE WEDDING OF
           </div>
           <div className="position-relative overflow-hidden">
             <Flower
-              style={{ position: "absolute", right: "-15%", opacity: "0.3" }}
+              style={{
+                width: "40%",
+                position: "fixed",
+                right: "-15%",
+                opacity: "0.3",
+                bottom: "0rem",
+              }}
             />
             <Flower
-              style={{ position: "absolute", left: "-15%", opacity: "0.3" }}
+              style={{
+                width: "40%",
+                position: "fixed",
+                left: "-15%",
+                opacity: "0.3",
+                bottom: "0rem",
+              }}
             />
             <div
               id="animated-text"
@@ -50,14 +64,14 @@ const FirstPage: React.FC<FirstPagePropTypes> = ({ onClickCta }) => {
                 !supportAccelerometer ? css.textShine : css.textGradient
               }`}
             >
-              <div className="font-70 margin--medium-b">Vidya</div>
-              <div className="font-40 margin--medium-b">&</div>
-              <div className="font-70">Faishal</div>
+              <div className="font-56 margin--medium-b">Vidya</div>
+              <div className="font-32 margin--medium-b">&</div>
+              <div className="font-56">Faishal</div>
             </div>
             <div className={`font-great-vibes ${css.textShadow}`}>
-              <div className="font-70 margin--medium-b">Vidya</div>
-              <div className="font-40 margin--medium-b">&</div>
-              <div className="font-70">Faishal</div>
+              <div className="font-56 margin--medium-b">Vidya</div>
+              <div className="font-32 margin--medium-b">&</div>
+              <div className="font-56">Faishal</div>
             </div>
           </div>
         </div>
@@ -65,10 +79,10 @@ const FirstPage: React.FC<FirstPagePropTypes> = ({ onClickCta }) => {
       <div
         className={`font-neuton font-letter-spacing-2 ${css.whiteBackground}`}
       >
-        <div className="font-20 font-regular">Kepada Yth.</div>
-        <div className="font-24 font-medium ">{name}</div>
+        <div className="font-15 font-regular">Kepada Yth.</div>
+        <div className="font-18 font-medium ">{name}</div>
 
-        <div className="font-20 font-transparent">Kepada Yth.</div>
+        <div className="font-15 font-transparent">Kepada Yth.</div>
       </div>
       <div className={css.greyBackground2}>
         <Button text="BUKA UNDANGAN" onClick={onClickCta} />
