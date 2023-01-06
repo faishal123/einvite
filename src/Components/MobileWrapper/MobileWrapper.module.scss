@@ -9,8 +9,8 @@
   min-height: 100vh;
   box-sizing: border-box;
   @media (max-width: 480px) {
+    box-sizing: border-box;
     width: 100%;
-    min-width: unset;
-    max-width: unset;
+    min-height: calc(100vh - 57px);
   }
 }

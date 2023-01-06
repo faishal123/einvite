@@ -13,55 +13,55 @@ code {
 }
 
 .font-15 {
-  font-size: 15px;
+  font-size: 0.938rem;
 }
 
 .font-16 {
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 .font-18 {
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 
 .font-20 {
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 
 .font-24 {
-  font-size: 24px;
+  font-size: 1.5rem;
 }
 
 .font-32 {
-  font-size: 32px;
+  font-size: 2rem;
 }
 
 .font-40 {
-  font-size: 40px;
+  font-size: 2.5rem;
 }
 
 .font-48 {
-  font-size: 48px;
+  font-size: 3rem;
 }
 
 .font-56 {
-  font-size: 56px;
+  font-size: 3.5rem;
 }
 
 .font-62 {
-  font-size: 62px;
+  font-size: 3.875rem;
 }
 
 .font-70 {
-  font-size: 70px;
+  font-size: 4.375rem;
 }
 
 .font-78 {
-  font-size: 78px;
+  font-size: 4.875rem;
 }
 
 .font-86 {
-  font-size: 86px;
+  font-size: 5.375rem;
 }
 
 .margin--xsmall-t {
@@ -522,4 +522,12 @@ code {
 
 .basic-text-shadow-5 {
   text-shadow: 5px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.position-relative {
+  position: relative;
+}
+
+.position-absolute {
+  position: absolute;
 }
