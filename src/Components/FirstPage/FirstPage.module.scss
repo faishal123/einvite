@@ -9,7 +9,10 @@
 }
 
 .container {
-  height: 100%;
+  height: 100vh;
+  @media (max-width: 480px) {
+    height: calc(100vh - 57px);
+  }
 }
 
 .imageContainer {
@@ -21,13 +24,13 @@
   background-position: center;
   text-align: center;
   flex-direction: column;
-  height: 40%;
+  height: 45%;
 }
 
 .greyBackground1 {
   position: relative;
   background: #393939;
-  height: 25%;
+  height: 20%;
   width: 100%;
 }
 
@@ -35,12 +38,22 @@
   background: #f2f2f2;
   height: 20%;
   width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  padding: 5% 10%;
+  box-sizing: border-box;
 }
 
 .greyBackground2 {
   background: #393939;
   height: 15%;
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .textGradient {
@@ -49,7 +62,7 @@
 }
 
 .textShine {
-  background: linear-gradient(130deg, #d2ac47 30%, #f6ed88 50%, #d2ac47 70%);
+  background: linear-gradient(130deg, #bb9837 30%, #f6ed88 50%, #bb9837 70%);
   animation: shine 2s infinite;
   background-size: 300%;
   background-position: left;

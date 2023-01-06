@@ -1,0 +1,21 @@
+.container {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  align-items: center;
+  height: 100vh;
+  margin-top: 4rem;
+  @media (max-width: 480px) {
+    height: calc(100vh - 57px);
+  }
+}
+
+.arabic {
+  line-height: 3rem;
+}
+
+.latin {
+  line-height: 2rem;
+}

@@ -1,29 +1,28 @@
 import React, { useEffect, useState } from "react";
 // import cover from "../../Images/cover.jpeg";
+import { useGyroscope } from "../../Utils/gyroscope";
+import { useLocation } from "react-router-dom";
+import Button from "../Button";
+import Flower from "../Button/Flower";
 import css from "./FirstPage.module.scss";
 
-const FirstPage = () => {
-  //gamma is phone's side rotation
-  //beta is phone's up and down rotation
-  const [accelerometerData, setAccelerometerData] =
-    useState<DeviceOrientationEvent | null>(null);
-  useEffect(() => {
-    window.addEventListener("deviceorientation", (e) => {
-      setAccelerometerData(e);
-    });
-  }, []);
+function useQuery() {
+  const { search } = useLocation();
+  return React.useMemo(() => new URLSearchParams(search), [search]);
+}
 
-  const supportAccelerometer =
-    accelerometerData?.alpha !== null &&
-    accelerometerData?.beta !== null &&
-    accelerometerData?.gamma !== null;
+type FirstPagePropTypes = {
+  onClickCta: () => void;
+};
 
-  let accelerometerX = 0;
-  let accelerometerY = 0;
-  if (supportAccelerometer) {
-    accelerometerX = (((accelerometerData?.gamma || 0) + 90) / 180) * 100;
-    accelerometerY = (((accelerometerData?.beta || 0) + 90) / 180) * 100;
-  }
+const FirstPage: React.FC<FirstPagePropTypes> = ({ onClickCta }) => {
+  const { supported, backgroundPositionX, backgroundPositionY } =
+    useGyroscope();
+
+  const supportAccelerometer = supported;
+
+  const query = useQuery();
+  const name = (query.get("name") || "Yang Bersangkutan")?.toUpperCase();
 
   return (
     <div className={css.container}>
@@ -33,17 +32,19 @@ const FirstPage = () => {
           <div className="basic-text-shadow-3 font-bodoni-moda font-18 margin--xlarge-b font-base-white font-letter-spacing-3">
             THE WEDDING OF
           </div>
-          <div className="position-relative">
+          <div className="position-relative overflow-hidden">
+            <Flower
+              style={{ position: "absolute", right: "-15%", opacity: "0.3" }}
+            />
+            <Flower
+              style={{ position: "absolute", left: "-15%", opacity: "0.3" }}
+            />
             <div
               id="animated-text"
               style={{
                 backgroundSize: supportAccelerometer ? "300%" : undefined,
-                backgroundPositionX: supportAccelerometer
-                  ? `${accelerometerX}%`
-                  : undefined,
-                backgroundPositionY: supportAccelerometer
-                  ? `${accelerometerY}%`
-                  : undefined,
+                backgroundPositionX,
+                backgroundPositionY,
               }}
               className={`font-great-vibes ${css.textContainer} ${
                 !supportAccelerometer ? css.textShine : css.textGradient
@@ -61,8 +62,17 @@ const FirstPage = () => {
           </div>
         </div>
       </div>
-      <div className={css.whiteBackground}></div>
-      <div className={css.greyBackground2}></div>
+      <div
+        className={`font-neuton font-letter-spacing-2 ${css.whiteBackground}`}
+      >
+        <div className="font-20 font-regular">Kepada Yth.</div>
+        <div className="font-24 font-medium ">{name}</div>
+
+        <div className="font-20 font-transparent">Kepada Yth.</div>
+      </div>
+      <div className={css.greyBackground2}>
+        <Button text="BUKA UNDANGAN" onClick={onClickCta} />
+      </div>
     </div>
   );
 };

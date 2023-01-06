@@ -5,11 +5,28 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: #393939;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.font-align-right {
+  text-align: right;
+}
+
+.font-align-left {
+  text-align: left;
+}
+
+.font-align-center {
+  text-align: center;
 }
 
 .font-15 {
@@ -62,6 +79,126 @@ code {
 
 .font-86 {
   font-size: 5.375rem;
+}
+
+.font-great-vibes {
+  font-family: "Great Vibes";
+}
+
+.font-bodoni-moda {
+  font-family: "Bodoni Moda";
+}
+
+.font-neuton {
+  font-family: "Neuton";
+}
+
+.font-base-black {
+  color: #393939;
+}
+
+.font-base-white {
+  color: #f2f2f2;
+}
+
+.font-transparent {
+  color: transparent;
+}
+
+.font-xxxlight {
+  font-weight: 100;
+}
+
+.font-xxlight {
+  font-weight: 200;
+}
+
+.font-xlight {
+  font-weight: 300;
+}
+
+.font-light {
+  font-weight: 400;
+}
+
+.font-regular {
+  font-weight: 500;
+}
+
+.font-medium {
+  font-weight: 600;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.font-xbold {
+  font-weight: 800;
+}
+
+.font-xxbold {
+  font-weight: 900;
+}
+
+.font-letter-spacing-1 {
+  letter-spacing: 1px;
+}
+
+.font-letter-spacing-2 {
+  letter-spacing: 2px;
+}
+
+.font-letter-spacing-3 {
+  letter-spacing: 3px;
+}
+
+.font-letter-spacing-4 {
+  letter-spacing: 4px;
+}
+
+.font-letter-spacing-5 {
+  letter-spacing: 5px;
+}
+
+.font-letter-spacing-6 {
+  letter-spacing: 6px;
+}
+
+.font-letter-spacing-7 {
+  letter-spacing: 7px;
+}
+
+.font-letter-spacing-8 {
+  letter-spacing: 8px;
+}
+
+.font-letter-spacing-9 {
+  letter-spacing: 9px;
+}
+
+.font-letter-spacing-10 {
+  letter-spacing: 10px;
+}
+
+.basic-text-shadow-3 {
+  text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.75);
+}
+
+.basic-text-shadow-4 {
+  text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.75);
+}
+
+.basic-text-shadow-5 {
+  text-shadow: 5px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.position-relative {
+  position: relative;
+}
+
+.position-absolute {
+  position: absolute;
 }
 
 .margin--xsmall-t {
@@ -454,80 +591,4 @@ code {
 }
 .padding--xxxxxxxxxxxxlarge-l {
   padding-left: 7rem;
-}
-
-.font-great-vibes {
-  font-family: "Great Vibes";
-}
-
-.font-bodoni-moda {
-  font-family: "Bodoni Moda";
-}
-
-.font-base-black {
-  color: #393939;
-}
-
-.font-base-white {
-  color: #f2f2f2;
-}
-
-.font-letter-spacing-1 {
-  letter-spacing: 1px;
-}
-
-.font-letter-spacing-2 {
-  letter-spacing: 2px;
-}
-
-.font-letter-spacing-3 {
-  letter-spacing: 3px;
-}
-
-.font-letter-spacing-4 {
-  letter-spacing: 4px;
-}
-
-.font-letter-spacing-5 {
-  letter-spacing: 5px;
-}
-
-.font-letter-spacing-6 {
-  letter-spacing: 6px;
-}
-
-.font-letter-spacing-7 {
-  letter-spacing: 7px;
-}
-
-.font-letter-spacing-8 {
-  letter-spacing: 8px;
-}
-
-.font-letter-spacing-9 {
-  letter-spacing: 9px;
-}
-
-.font-letter-spacing-10 {
-  letter-spacing: 10px;
-}
-
-.basic-text-shadow-3 {
-  text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.75);
-}
-
-.basic-text-shadow-4 {
-  text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.75);
-}
-
-.basic-text-shadow-5 {
-  text-shadow: 5px 5px 0px rgba(0, 0, 0, 0.75);
-}
-
-.position-relative {
-  position: relative;
-}
-
-.position-absolute {
-  position: absolute;
 }
