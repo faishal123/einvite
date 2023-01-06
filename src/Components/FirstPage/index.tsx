@@ -15,7 +15,7 @@ const FirstPage = () => {
           <div className="font-70">Faishal</div>
         </div>
       </div>
-      <div className={css.greyBackground1}></div>
+      <div className={css.greyBackground1}>test</div>
       <div className={css.whiteBackground}></div>
       <div className={css.greyBackground2}></div>
     </div>
