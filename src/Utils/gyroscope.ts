@@ -1,11 +1,38 @@
 import { useEffect, useState } from "react";
 
 export const useGyroscope = () => {
+  const [allowed, setAllowed] = useState(false);
+
+  const askPermission = () => {
+    if (
+      typeof (DeviceOrientationEvent as any).requestPermission === "function"
+    ) {
+      (DeviceOrientationEvent as any)
+        .requestPermission()
+        .then((permissionState: string) => {
+          if (permissionState === "granted") {
+            setAllowed(true);
+            window.addEventListener("deviceorientation", (e) => {
+              setAccelerometerData(e);
+            });
+          } else {
+            setAllowed(false);
+          }
+        })
+        .catch(() => {
+          setAllowed(false);
+        });
+    } else {
+      setAllowed(true);
+    }
+  };
+
   //gamma is phone's side rotation
   //beta is phone's up and down rotation
   const [accelerometerData, setAccelerometerData] =
     useState<DeviceOrientationEvent | null>(null);
   useEffect(() => {
+    askPermission();
     window.addEventListener("deviceorientation", (e) => {
       setAccelerometerData(e);
     });
@@ -14,7 +41,8 @@ export const useGyroscope = () => {
   const supportAccelerometer =
     accelerometerData?.alpha !== null &&
     accelerometerData?.beta !== null &&
-    accelerometerData?.gamma !== null;
+    accelerometerData?.gamma !== null &&
+    allowed;
 
   let accelerometerX = 0;
   let accelerometerY = 0;

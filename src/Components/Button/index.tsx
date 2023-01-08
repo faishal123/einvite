@@ -6,6 +6,8 @@ type ButtonPropTypes = {
   text: string;
   onClick: () => void;
   variant?: "black" | "white";
+  width?: string;
+  disabled?: boolean;
 };
 
 const textColorByVariant = {
@@ -17,14 +19,17 @@ const Button: React.FC<ButtonPropTypes> = ({
   text,
   onClick,
   variant = "black",
+  disabled = false,
+  width = "100%",
 }) => {
   const { supported, backgroundPositionX, backgroundPositionY } =
     useGyroscope();
   const supportAccelerometer = supported;
   return (
     <button
-      style={{ backgroundPositionX, backgroundPositionY }}
-      className={`${css[variant]} ${css.button} ${
+      disabled={disabled}
+      style={{ width, backgroundPositionX, backgroundPositionY }}
+      className={`${css[variant]} ${css.button} ${css[variant]} ${
         supportAccelerometer ? css.withAccelerometer : css.withoutAccelerometer
       }`}
       onClick={onClick}

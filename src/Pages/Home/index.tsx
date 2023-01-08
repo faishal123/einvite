@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import MobileWrapper from "../../Components/MobileWrapper";
 import FirstPage from "../../Components/FirstPage";
+import Reservation from "../../Components/Reservation";
 import QuranPage from "../../Components/QuranPage";
 
 const Home = () => {
@@ -32,6 +33,7 @@ const Home = () => {
       {showFull && (
         <>
           <QuranPage />
+          <Reservation />
         </>
       )}
     </MobileWrapper>

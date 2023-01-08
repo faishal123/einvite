@@ -85,7 +85,7 @@ const FirstPage: React.FC<FirstPagePropTypes> = ({ onClickCta }) => {
         <div className="font-15 font-transparent">Kepada Yth.</div>
       </div>
       <div className={css.greyBackground2}>
-        <Button text="BUKA UNDANGAN" onClick={onClickCta} />
+        <Button width="80%" text="BUKA UNDANGAN" onClick={onClickCta} />
       </div>
     </div>
   );

@@ -17,6 +17,14 @@ code {
   overflow: hidden;
 }
 
+.font-line-height-small {
+  line-height: 1rem;
+}
+
+.font-line-height-medium {
+  line-height: 1.25rem;
+}
+
 .font-align-right {
   text-align: right;
 }
