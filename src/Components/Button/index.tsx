@@ -36,7 +36,7 @@ const Button: React.FC<ButtonPropTypes> = ({
     >
       <div>
         <span
-          className={`font-medium font-15 font-letter-spacing-3 font-base-${textColorByVariant[variant]}`}
+          className={`font-weight-medium font-size-15 font-letter-spacing-3 font-base-${textColorByVariant[variant]}`}
         >
           {text}
         </span>

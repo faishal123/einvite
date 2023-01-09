@@ -26,7 +26,7 @@ const Input: React.FC<InputPropTypes> = ({
       {label && <InputLabel optional={optional} label={label} />}
       {!!textArea ? (
         <textarea
-          className={`font-bodoni-moda ${css.input}`}
+          className={`font-family-bodoni-moda ${css.input}`}
           placeholder={placeholder}
           rows={isMobile ? 3 : 5}
           onChange={(e) => {
@@ -37,7 +37,7 @@ const Input: React.FC<InputPropTypes> = ({
         />
       ) : (
         <input
-          className={`font-bodoni-moda ${css.input}`}
+          className={`font-family-bodoni-moda ${css.input}`}
           placeholder={placeholder}
           onChange={(e) => {
             onChange(e?.target?.value);

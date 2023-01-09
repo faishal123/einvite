@@ -1,15 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Input from "../Input";
 import Radio from "../Radio";
 import { useCheckOverflow } from "../../Utils/common";
 import Button from "../Button";
-import { toast } from "react-toastify";
+import { AppContext } from "../../Utils/context";
 import css from "./Reservation.module.scss";
 import { CreateRecordPayload } from "../../Utils/airtable";
 import { showToast, showPromiseToast } from "../../Utils/toast";
 import { createRecord } from "../../Utils/airtable";
+import Flower from "../Flower";
 
-const Reservation = () => {
+type ReservationPropTypes = {
+  onCompletedCreateRecords: () => void;
+};
+
+const Reservation: React.FC<ReservationPropTypes> = ({
+  onCompletedCreateRecords,
+}) => {
+  const { style } = useContext(AppContext);
   const { ref, isOverflowing } = useCheckOverflow<HTMLDivElement>();
 
   const [isLoading, setIsLoading] = useState(false);
@@ -36,7 +44,7 @@ const Reservation = () => {
       minHeight: "100vh",
     },
     notOverflowing: {
-      height: "100vh",
+      ...style,
     },
   };
 
@@ -55,6 +63,7 @@ const Reservation = () => {
     resetPrayer();
     resetWillCome();
     setIsLoading(false);
+    onCompletedCreateRecords();
   };
 
   const onErrorIncompleteField = () => {
@@ -89,6 +98,9 @@ const Reservation = () => {
       });
   };
 
+  const isComing = willCome.value === "y";
+  const notComing = willCome.value === "n";
+
   return (
     <div
       className={css.container}
@@ -98,6 +110,46 @@ const Reservation = () => {
           : containerStyle.notOverflowing
       }
     >
+      <Flower
+        variant="black"
+        opacity="0.5"
+        style={{
+          zIndex: "0",
+          position: "absolute",
+          left: "-3rem",
+          top: "-3rem",
+        }}
+      />
+      <Flower
+        variant="black"
+        opacity="0.5"
+        style={{
+          zIndex: "0",
+          position: "absolute",
+          right: "-3rem",
+          top: "-3rem",
+        }}
+      />
+      <Flower
+        variant="black"
+        opacity="0.5"
+        style={{
+          zIndex: "0",
+          position: "absolute",
+          left: "-3rem",
+          bottom: "-3rem",
+        }}
+      />
+      <Flower
+        variant="black"
+        opacity="0.5"
+        style={{
+          zIndex: "0",
+          position: "absolute",
+          right: "-3rem",
+          bottom: "-3rem",
+        }}
+      />
       <div
         className={css.content}
         ref={ref}
@@ -106,12 +158,12 @@ const Reservation = () => {
         }
       >
         <div
-          className={`font-bodoni-moda font-medium font-32 font-letter-spacing-3 margin--large-t`}
+          className={`font-family-bodoni-moda font-weight-medium font-size-32 font-letter-spacing-3 margin--large-t`}
         >
           RESERVASI
         </div>
         <div
-          className={`font-bodoni-moda font-medium font-15 font-letter-spacing-1 margin--small-t padding--large-l padding--large-r font-align-center font-line-height-small`}
+          className={`font-family-bodoni-moda font-weight-medium font-size-15 font-letter-spacing-1 margin--small-t padding--large-l padding--large-r font-align-center font-line-height-small`}
         >
           Untuk mencegah penyebaran virus COVID-19, kami mengharapkan konfirmasi
           kedatangan Anda pada form berikut:
@@ -160,9 +212,11 @@ const Reservation = () => {
                 selected={willCome}
               />
             </div>
-            <div className="margin--large-t">
+            <div
+              className={`${isComing ? css.show : css.hide} margin--large-t`}
+            >
               <Radio
-                name="jumlahTamue"
+                name="jumlahTamu"
                 label="Jumlah Tamu"
                 choices={[
                   {
@@ -187,8 +241,6 @@ const Reservation = () => {
             variant="white"
             onClick={() => {
               if (name && willCome?.value) {
-                const isComing = willCome.value === "y";
-                const notComing = willCome.value === "n";
                 if (isComing) {
                   if (peopleAmount.value) {
                     const payload = {

@@ -1,15 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import Flower from "../Flower";
+import { AppContext } from "../../Utils/context";
 import css from "./QuranPage.module.scss";
 
 const QuranPage = () => {
+  const { style } = useContext(AppContext);
   return (
     <div
+      style={{ ...style }}
       id="quranPage"
       className={`position-relative font-base-white ${css.container}`}
     >
       <div
-        className={`position-relative font-24 font-align-right ${css.arabic}`}
+        className={`position-relative font-size-24 font-align-right ${css.arabic}`}
       >
         وَمِنْ اٰيٰتِهٖٓ اَنْ خَلَقَ لَكُمْ مِّنْ اَنْفُسِكُمْ اَزْوَاجًا
         لِّتَسْكُنُوْٓا اِلَيْهَا وَجَعَلَ بَيْنَكُمْ مَّوَدَّةً وَّرَحْمَةً

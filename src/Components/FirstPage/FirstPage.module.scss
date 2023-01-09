@@ -8,13 +8,6 @@
   }
 }
 
-.container {
-  height: 100vh;
-  @media (max-width: 480px) {
-    height: calc(100vh - 57px);
-  }
-}
-
 // .gifContainer {
 //   height: 40%;
 //   width: 100%;

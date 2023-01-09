@@ -13,6 +13,10 @@ code {
     monospace;
 }
 
+.box-sizing-border-box {
+  box-sizing: border-box;
+}
+
 .overflow-hidden {
   overflow: hidden;
 }
@@ -33,75 +37,79 @@ code {
   text-align: left;
 }
 
+.font-align-justify {
+  text-align: justify;
+}
+
 .font-align-center {
   text-align: center;
 }
 
-.font-11 {
+.font-size-11 {
   font-size: 0.688rem;
 }
 
-.font-15 {
+.font-size-15 {
   font-size: 0.938rem;
 }
 
-.font-16 {
+.font-size-16 {
   font-size: 1rem;
 }
 
-.font-18 {
+.font-size-18 {
   font-size: 1.125rem;
 }
 
-.font-20 {
+.font-size-20 {
   font-size: 1.25rem;
 }
 
-.font-24 {
+.font-size-24 {
   font-size: 1.5rem;
 }
 
-.font-32 {
+.font-size-32 {
   font-size: 2rem;
 }
 
-.font-40 {
+.font-size-40 {
   font-size: 2.5rem;
 }
 
-.font-48 {
+.font-size-48 {
   font-size: 3rem;
 }
 
-.font-56 {
+.font-size-56 {
   font-size: 3.5rem;
 }
 
-.font-62 {
+.font-size-62 {
   font-size: 3.875rem;
 }
 
-.font-70 {
+.font-size-70 {
   font-size: 4.375rem;
 }
 
-.font-78 {
+.font-size-78 {
   font-size: 4.875rem;
 }
 
-.font-86 {
+.font-size-86 {
   font-size: 5.375rem;
 }
 
-.font-great-vibes {
+.font-family-great-vibes {
   font-family: "Great Vibes";
 }
 
-.font-bodoni-moda {
+.font-family-bodoni-moda {
   font-family: "Bodoni Moda";
 }
 
-.font-neuton {
+.font-family-neuton {
   font-family: "Neuton";
 }
 
@@ -117,39 +125,39 @@ code {
   color: transparent;
 }
 
-.font-xxxlight {
+.font-weight-xxxlight {
   font-weight: 100;
 }
 
-.font-xxlight {
+.font-weight-xxlight {
   font-weight: 200;
 }
 
-.font-xlight {
+.font-weight-xlight {
   font-weight: 300;
 }
 
-.font-light {
+.font-weight-light {
   font-weight: 400;
 }
 
-.font-regular {
+.font-weight-regular {
   font-weight: 500;
 }
 
-.font-medium {
+.font-weight-medium {
   font-weight: 600;
 }
 
-.font-bold {
+.font-weight-bold {
   font-weight: 700;
 }
 
-.font-xbold {
+.font-weight-xbold {
   font-weight: 800;
 }
 
-.font-xxbold {
+.font-weight-xxbold {
   font-weight: 900;
 }
 
