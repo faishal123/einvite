@@ -1,13 +1,9 @@
-import React, { useEffect, useState, useContext } from "react";
-// import cover from "../../Images/cover.jpeg";
+import React, { useContext } from "react";
 import { useGyroscope } from "../../Utils/gyroscope";
 import { useLocation } from "react-router-dom";
 import Button from "../Button";
 import { AppContext } from "../../Utils/context";
-import { useWindowSize } from "../../Utils/common";
 import Flower from "../Flower";
-import cover from "../../Images/cover.mp4";
-import coverGif from "../../Images/cover.gif";
 import css from "./FirstPage.module.scss";
 
 function useQuery() {
@@ -17,9 +13,13 @@ function useQuery() {
 
 type FirstPagePropTypes = {
   onClickCta: () => void;
+  alreadyOpened: boolean;
 };
 
-const FirstPage: React.FC<FirstPagePropTypes> = ({ onClickCta }) => {
+const FirstPage: React.FC<FirstPagePropTypes> = ({
+  onClickCta,
+  alreadyOpened,
+}) => {
   const { style } = useContext(AppContext);
   const { supported, backgroundPositionX, backgroundPositionY } =
     useGyroscope();
@@ -43,7 +43,6 @@ const FirstPage: React.FC<FirstPagePropTypes> = ({ onClickCta }) => {
                 width: "40%",
                 position: "fixed",
                 right: "-15%",
-                opacity: "0.3",
                 bottom: "0rem",
               }}
             />
@@ -52,7 +51,6 @@ const FirstPage: React.FC<FirstPagePropTypes> = ({ onClickCta }) => {
                 width: "40%",
                 position: "fixed",
                 left: "-15%",
-                opacity: "0.3",
                 bottom: "0rem",
               }}
             />
@@ -88,7 +86,11 @@ const FirstPage: React.FC<FirstPagePropTypes> = ({ onClickCta }) => {
         <div className="font-size-15 font-transparent">Kepada Yth.</div>
       </div>
       <div className={css.greyBackground2}>
-        <Button width="80%" text="BUKA UNDANGAN" onClick={onClickCta} />
+        <Button
+          width="80%"
+          text={`${alreadyOpened ? "LIHAT" : "BUKA"} UNDANGAN`}
+          onClick={onClickCta}
+        />
       </div>
     </div>
   );

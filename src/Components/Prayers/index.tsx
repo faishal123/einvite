@@ -3,7 +3,7 @@ import React from "react";
 import { useContext } from "react";
 import { AppContext } from "../../Utils/context";
 import css from "./Prayers.module.scss";
-import { useWindowSize } from "../../Utils/common";
+import Flower from "../Flower";
 import maskIcon from "../../Images/mask.svg";
 import distanceIcon from "../../Images/distance.svg";
 import temperatureIcon from "../../Images/temperature.svg";
@@ -17,15 +17,22 @@ type PrayersPropTypes = {
 const cautionIcons = [maskIcon, distanceIcon, temperatureIcon, washHandIcon];
 
 const Prayers: React.FC<PrayersPropTypes> = ({ prayers }) => {
-  const { height } = useContext(AppContext);
+  const { firstRenderHeight } = useContext(AppContext);
   return (
     <div
-      className={`box-sizing-border-box padding--xxlarge-b padding--xxlarge-t padding--xxlarge-l padding--xxlarge-r`}
-      style={{ minHeight: height, transition: "0.2s" }}
+      id="prayerPage"
+      className={`overflow-hidden position-relative box-sizing-border-box padding--xxlarge-b padding--xxlarge-t padding--xxlarge-l padding--xxlarge-r`}
+      style={{ minHeight: firstRenderHeight, transition: "0.2s" }}
     >
+      <Flower style={{ position: "absolute", top: "-1rem", left: "-1rem" }} />
+      <Flower style={{ position: "absolute", top: "30%", right: "-1rem" }} />
+      <Flower style={{ position: "absolute", bottom: "30%", left: "-1rem" }} />
+      <Flower
+        style={{ position: "absolute", bottom: "-3rem", right: "-1rem" }}
+      />
       {prayers?.length > 0 && (
         <>
-          <div className="margin--large-b font-family-neuton font-size-20 font-letter-spacing-2 font-base-white font-align-justify">
+          <div className="margin--large-b font-family-neuton font-size-18 font-letter-spacing-2 font-base-white font-align-justify">
             Sebuah Kebahagian yang sangat dalam bagi kami apabila
             Bapak/Ibu/Saudara/i semua turut mendoakan pada hari bahagia kami.
           </div>
@@ -51,7 +58,7 @@ const Prayers: React.FC<PrayersPropTypes> = ({ prayers }) => {
           <div className={css.line}></div>
         </>
       )}
-      <div className="font-base-white margin--xxxlarge-t font-align-justify font-letter-spacing-2 font-family-neuton font-size-20">
+      <div className="font-base-white margin--xxxlarge-t font-align-justify font-letter-spacing-2 font-family-neuton font-size-18">
         Dengan tidak mengurangi rasa hormat kami, untuk menjaga kesehatan kita
         semua serta tetap mengikuti protokol kesehatan yang berlaku dimasa
         pandemi. Semoga kita semua senantiasa diberikan kesehatan & kebahagiaan,

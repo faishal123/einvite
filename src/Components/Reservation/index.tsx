@@ -17,7 +17,7 @@ type ReservationPropTypes = {
 const Reservation: React.FC<ReservationPropTypes> = ({
   onCompletedCreateRecords,
 }) => {
-  const { style } = useContext(AppContext);
+  const { styleStatic } = useContext(AppContext);
   const { ref, isOverflowing } = useCheckOverflow<HTMLDivElement>();
 
   const [isLoading, setIsLoading] = useState(false);
@@ -44,7 +44,7 @@ const Reservation: React.FC<ReservationPropTypes> = ({
       minHeight: "100vh",
     },
     notOverflowing: {
-      ...style,
+      ...styleStatic,
     },
   };
 

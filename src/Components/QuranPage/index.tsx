@@ -4,10 +4,10 @@ import { AppContext } from "../../Utils/context";
 import css from "./QuranPage.module.scss";
 
 const QuranPage = () => {
-  const { style } = useContext(AppContext);
+  const { styleStatic } = useContext(AppContext);
   return (
     <div
-      style={{ ...style }}
+      style={{ ...styleStatic }}
       id="quranPage"
       className={`position-relative font-base-white ${css.container}`}
     >
@@ -28,7 +28,7 @@ const QuranPage = () => {
       </div>
       <br />
       <br />
-      <div className={`position-relative ${css.latin}`}>
+      <div className={`position-relative font-size-15 ${css.latin}`}>
         "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan
         pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan
         merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan

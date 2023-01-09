@@ -10,14 +10,14 @@ type FlowerPropTypes = {
 
 const Flower: React.FC<FlowerPropTypes> = ({
   style,
-  opacity = "0.3",
+  opacity = "0.5",
   variant = "white",
 }) => {
   const isBlack = variant === "black";
   return (
     <img
       className={isBlack ? css.black : css.white}
-      style={{ opacity, ...style }}
+      style={{ opacity, zIndex: "0", ...style }}
       src={flower}
       alt="flower"
     />

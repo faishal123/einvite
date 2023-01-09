@@ -7,8 +7,10 @@
 }
 
 .prayersContainer {
+  position: relative;
   max-height: 30rem;
   overflow: auto;
+  z-index: 1;
 }
 
 .covidCautionContainer {

@@ -17,10 +17,13 @@ const Home = () => {
         setPrayers(
           res.data?.records?.reduce(
             (a: SinglePrayerType[], c: RecordsFromAirtable["0"]) => {
-              return [
-                ...a,
-                { name: c?.fields?.Name, prayer: c?.fields?.Prayer },
-              ];
+              if (c?.fields?.Prayer) {
+                return [
+                  ...a,
+                  { name: c?.fields?.Name, prayer: c?.fields?.Prayer },
+                ];
+              }
+              return a;
             },
             []
           )
@@ -50,6 +53,7 @@ const Home = () => {
   return (
     <MobileWrapper>
       <FirstPage
+        alreadyOpened={showFull}
         onClickCta={() => {
           if (showFull) {
             scrollToQuran();
@@ -64,6 +68,10 @@ const Home = () => {
           <Reservation
             onCompletedCreateRecords={() => {
               getPrayers();
+              const prayerElement = document.getElementById("prayerPage");
+              if (prayerElement) {
+                prayerElement.scrollIntoView({ behavior: "smooth" });
+              }
             }}
           />
           <Prayers prayers={prayers} />
