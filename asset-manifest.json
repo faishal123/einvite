@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/einvite/static/css/main.4f40802a.css",
-    "main.js": "/einvite/static/js/main.cb20c0a5.js",
+    "main.css": "/einvite/static/css/main.ba9d5bc5.css",
+    "main.js": "/einvite/static/js/main.208a8eb3.js",
     "static/js/787.28cb0dcd.chunk.js": "/einvite/static/js/787.28cb0dcd.chunk.js",
     "static/media/cover.gif": "/einvite/static/media/cover.3a703094a9162cd4cd51.gif",
     "static/media/flower1.svg": "/einvite/static/media/flower1.27cf74a4d259ef7ed4e14300225f0d1b.svg",
@@ -10,12 +10,12 @@
     "static/media/distance.svg": "/einvite/static/media/distance.9ffff031586225266852e71fb33279b4.svg",
     "static/media/mask.svg": "/einvite/static/media/mask.6af573cffe9bf4b401811e8701916c2e.svg",
     "index.html": "/einvite/index.html",
-    "main.4f40802a.css.map": "/einvite/static/css/main.4f40802a.css.map",
-    "main.cb20c0a5.js.map": "/einvite/static/js/main.cb20c0a5.js.map",
+    "main.ba9d5bc5.css.map": "/einvite/static/css/main.ba9d5bc5.css.map",
+    "main.208a8eb3.js.map": "/einvite/static/js/main.208a8eb3.js.map",
     "787.28cb0dcd.chunk.js.map": "/einvite/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4f40802a.css",
-    "static/js/main.cb20c0a5.js"
+    "static/css/main.ba9d5bc5.css",
+    "static/js/main.208a8eb3.js"
   ]
 }
