@@ -5,11 +5,11 @@ export type SinglePrayerType = {
 
 export type RecordsFromAirtable = {
   id: string;
-  createdTime: string;
   fields: {
     Name: string;
     Prayer: string;
     Amount: number;
     CreatedAt: string;
+    Coming: boolean;
   };
 }[];

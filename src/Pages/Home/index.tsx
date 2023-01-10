@@ -4,8 +4,11 @@ import FirstPage from "../../Components/FirstPage";
 import Reservation from "../../Components/Reservation";
 import { getRecords } from "../../Utils/airtable";
 import QuranPage from "../../Components/QuranPage";
+import BrideAndGroom from "../../Components/BrideAndGroom";
+import Gallery from "../../Components/Gallery";
 import Prayers from "../../Components/Prayers";
-import { SinglePrayerType, RecordsFromAirtable } from "../../Utils/types";
+import TimeAndPlace from "../../Components/TimeAndPlace";
+import { SinglePrayerType } from "../../Utils/types";
 
 const Home = () => {
   const [showFull, setShowFull] = useState(false);
@@ -14,20 +17,11 @@ const Home = () => {
   const getPrayers = () => {
     getRecords()
       .then((res) => {
-        setPrayers(
-          res.data?.records?.reduce(
-            (a: SinglePrayerType[], c: RecordsFromAirtable["0"]) => {
-              if (c?.fields?.Prayer) {
-                return [
-                  ...a,
-                  { name: c?.fields?.Name, prayer: c?.fields?.Prayer },
-                ];
-              }
-              return a;
-            },
-            []
-          )
-        );
+        const prayersData = res?.map((r) => ({
+          name: r?.fields?.Name as string,
+          prayer: r?.fields?.Prayer as string,
+        }));
+        setPrayers(prayersData?.filter((prayer) => !!prayer?.prayer));
       })
       .catch((e) => {
         console.error(e);
@@ -65,6 +59,8 @@ const Home = () => {
       {showFull && (
         <>
           <QuranPage />
+          <BrideAndGroom />
+          <TimeAndPlace />
           <Reservation
             onCompletedCreateRecords={() => {
               getPrayers();
@@ -75,6 +71,7 @@ const Home = () => {
             }}
           />
           <Prayers prayers={prayers} />
+          <Gallery />
         </>
       )}
     </MobileWrapper>

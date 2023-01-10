@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import moment from "moment";
 
 export function useWindowSize() {
   const isClient = typeof window === "object";
@@ -58,4 +59,58 @@ export const useCheckOverflow = <T>() => {
   const newRef = elRef as React.RefObject<T>;
 
   return { ref: newRef, isOverflowing };
+};
+
+export const createDuration = (endDate: Date) => {
+  const eventTime = moment(endDate).unix();
+  const currentTime = moment().unix();
+  const diffTime = eventTime - currentTime;
+  if (!endDate) {
+    return moment.duration(-1);
+  }
+  return moment.duration(diffTime * 1000);
+};
+
+type UserTimerParameter = {
+  endDate: Date;
+};
+
+export const useTimer = ({ endDate }: UserTimerParameter) => {
+  const currentDate = new Date();
+  const newEndDate = endDate || currentDate;
+  const [timeLeft, setTimeLeft] = useState(createDuration(newEndDate));
+
+  useEffect(() => {
+    if (timeLeft.asMilliseconds() >= 0 && newEndDate !== currentDate) {
+      const timer = setTimeout(() => {
+        setTimeLeft(createDuration(newEndDate));
+      }, 1000);
+      return () => {
+        clearTimeout(timer);
+      };
+    }
+    return () => {};
+  });
+
+  if (timeLeft.asMilliseconds() < 0) {
+    return {
+      ...timeLeft,
+      asMilliseconds: () => {
+        return 0;
+      },
+      asSeconds: () => {
+        return 0;
+      },
+      hours: () => {
+        return 0;
+      },
+      minutes: () => {
+        return 0;
+      },
+      seconds: () => {
+        return 0;
+      },
+    };
+  }
+  return timeLeft;
 };

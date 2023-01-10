@@ -32,7 +32,7 @@ const Prayers: React.FC<PrayersPropTypes> = ({ prayers }) => {
       />
       {prayers?.length > 0 && (
         <>
-          <div className="margin--large-b font-family-neuton font-size-18 font-letter-spacing-2 font-base-white font-align-justify">
+          <div className="margin--large-b margin--xlarge-t font-family-neuton font-size-18 font-letter-spacing-2 font-base-white font-align-justify">
             Sebuah Kebahagian yang sangat dalam bagi kami apabila
             Bapak/Ibu/Saudara/i semua turut mendoakan pada hari bahagia kami.
           </div>
@@ -66,7 +66,7 @@ const Prayers: React.FC<PrayersPropTypes> = ({ prayers }) => {
       </div>
       <div className={css.covidCautionContainer}>
         {cautionIcons?.map((icon) => (
-          <div className={css.covidCaution}>
+          <div className={css.covidCaution} key={icon}>
             <img src={icon} />
           </div>
         ))}

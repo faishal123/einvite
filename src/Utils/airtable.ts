@@ -1,10 +1,14 @@
-import axios from "axios";
+import Airtable from "airtable";
 
 export const apikey = "keyRwwLZXvBXBhvqN";
 export const getRecords = () => {
-  return axios.get(
-    `https://api.airtable.com/v0/appj95J43w6kJIFyg/rsvp?api_key=${apikey}&sort%5B0%5D%5Bfield%5D=CreatedAt&sort%5B0%5D%5Bdirection%5D=desc`
-  );
+  const base = new Airtable({ apiKey: apikey }).base("appj95J43w6kJIFyg");
+  return base("rsvp")
+    .select({
+      view: "Grid view",
+      sort: [{ field: "CreatedAt", direction: "desc" }],
+    })
+    .all();
 };
 
 export type CreateRecordPayload = {
@@ -15,14 +19,10 @@ export type CreateRecordPayload = {
 };
 
 export const createRecord = (payload: CreateRecordPayload) => {
-  return axios.post(
-    `https://api.airtable.com/v0/appj95J43w6kJIFyg/rsvp?api_key=${apikey}`,
+  const base = new Airtable({ apiKey: apikey }).base("appj95J43w6kJIFyg");
+  return base("rsvp").create([
     {
-      records: [
-        {
-          fields: payload,
-        },
-      ],
-    }
-  );
+      fields: payload,
+    },
+  ]);
 };

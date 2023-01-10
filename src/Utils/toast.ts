@@ -1,4 +1,4 @@
-import { AxiosResponse } from "axios";
+import { Records, FieldSet } from "airtable";
 import { toast, ToastPosition } from "react-toastify";
 
 type ShowToastParameterType = {
@@ -21,7 +21,7 @@ type ShowPromiseToastParameterType = {
   pending: string;
   success: string;
   error: string;
-  promiseFunction: Promise<AxiosResponse<any, any>>;
+  promiseFunction: Promise<Records<FieldSet>>;
 };
 
 const toastParameters: ToastParameterType = {

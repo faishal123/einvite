@@ -4,10 +4,10 @@ import { AppContext } from "../../Utils/context";
 import css from "./QuranPage.module.scss";
 
 const QuranPage = () => {
-  const { styleStatic } = useContext(AppContext);
+  const { firstRenderHeight } = useContext(AppContext);
   return (
     <div
-      style={{ ...styleStatic }}
+      style={{ height: `calc(${firstRenderHeight}px + 100px)` }}
       id="quranPage"
       className={`position-relative font-base-white ${css.container}`}
     >
