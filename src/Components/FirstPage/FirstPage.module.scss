@@ -8,6 +8,12 @@
   }
 }
 
+@-webkit-keyframes shine {
+  to {
+    background-position: right;
+  }
+}
+
 // .gifContainer {
 //   height: 40%;
 //   width: 100%;
@@ -39,7 +45,7 @@
   flex-direction: column;
   position: relative;
   flex-grow: 1;
-  
+
   // overflow: hidden;
   // display: flex;
   // justify-content: center;
@@ -95,6 +101,7 @@
 .textShine {
   background: linear-gradient(130deg, #bb9837 30%, #f6ed88 50%, #bb9837 70%);
   animation: shine 2s infinite;
+  -webkit-animation: shine 2s infinite;
   background-size: 300%;
   background-position: left;
 }

@@ -4,6 +4,12 @@
   }
 }
 
+@-webkit-keyframes shine {
+  to {
+    background-position: right;
+  }
+}
+
 .button {
   z-index: 1;
   cursor: pointer;
@@ -46,6 +52,7 @@
   background-size: 300%;
   &:hover {
     animation: shine 2s infinite;
+    -webkit-animation: shine 2s infinite;
     > div {
       transition: 0.2s;
       opacity: 0.9;
@@ -63,4 +70,9 @@
   > div {
     background-color: #f2f2f2;
   }
+}
+
+.loaderContainer {
+  display: flex;
+  justify-content: center;
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import { useGyroscope } from "../../Utils/gyroscope";
+import Loader from "../Loader";
 import css from "./Button.module.scss";
 
 type ButtonPropTypes = {
@@ -8,6 +9,7 @@ type ButtonPropTypes = {
   variant?: "black" | "white";
   width?: string;
   disabled?: boolean;
+  loading?: boolean;
 };
 
 const textColorByVariant = {
@@ -21,6 +23,7 @@ const Button: React.FC<ButtonPropTypes> = ({
   variant = "black",
   disabled = false,
   width = "100%",
+  loading = false,
 }) => {
   const { supported, backgroundPositionX, backgroundPositionY } =
     useGyroscope();
@@ -32,14 +35,20 @@ const Button: React.FC<ButtonPropTypes> = ({
       className={`${css[variant]} ${css.button} ${css[variant]} ${
         supportAccelerometer ? css.withAccelerometer : css.withoutAccelerometer
       }`}
-      onClick={onClick}
+      onClick={loading ? () => null : onClick}
     >
       <div>
-        <span
-          className={`font-weight-medium font-size-15 font-letter-spacing-3 font-base-${textColorByVariant[variant]}`}
-        >
-          {text}
-        </span>
+        {loading ? (
+          <div className={css.loaderContainer}>
+            <Loader />
+          </div>
+        ) : (
+          <span
+            className={`font-weight-medium font-size-15 font-letter-spacing-3 font-base-${textColorByVariant[variant]}`}
+          >
+            {text}
+          </span>
+        )}
       </div>
     </button>
   );

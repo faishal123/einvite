@@ -7,21 +7,22 @@ export const useGyroscope = () => {
     if (
       typeof (DeviceOrientationEvent as any).requestPermission === "function"
     ) {
-      (DeviceOrientationEvent as any)
-        .requestPermission()
-        .then((permissionState: string) => {
-          if (permissionState === "granted") {
-            setAllowed(true);
-            window.addEventListener("deviceorientation", (e) => {
-              setAccelerometerData(e);
-            });
-          } else {
-            setAllowed(false);
-          }
-        })
-        .catch(() => {
-          setAllowed(false);
-        });
+      // (DeviceOrientationEvent as any)
+      //   .requestPermission()
+      //   .then((permissionState: string) => {
+      //     if (permissionState === "granted") {
+      //       setAllowed(true);
+      //       window.addEventListener("deviceorientation", (e) => {
+      //         setAccelerometerData(e);
+      //       });
+      //     } else {
+      //       setAllowed(false);
+      //     }
+      //   })
+      //   .catch(() => {
+      //     setAllowed(false);
+      //   });
+      setAllowed(false);
     } else {
       setAllowed(true);
     }

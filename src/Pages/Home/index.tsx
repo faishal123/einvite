@@ -8,11 +8,21 @@ import BrideAndGroom from "../../Components/BrideAndGroom";
 import Gallery from "../../Components/Gallery";
 import Prayers from "../../Components/Prayers";
 import TimeAndPlace from "../../Components/TimeAndPlace";
+import AudioControl from "../../Components/AudioControl";
 import { SinglePrayerType } from "../../Utils/types";
 
 const Home = () => {
   const [showFull, setShowFull] = useState(false);
   const [prayers, setPrayers] = useState<SinglePrayerType[]>([]);
+  // const [isAudioLoading, setIsAudioLoading] = useState(false);
+
+  const bgmElement = document.getElementById(
+    "backgroundMusic"
+  ) as HTMLAudioElement;
+
+  console.log(bgmElement?.readyState);
+
+  const isAudioLoading = bgmElement?.readyState !== 4;
 
   const getPrayers = () => {
     getRecords()
@@ -44,37 +54,49 @@ const Home = () => {
       scrollToQuran();
     }
   }, [showFull]);
+
+  const playAudio = () => {
+    if (bgmElement) {
+      bgmElement.play();
+    }
+  };
+
   return (
-    <MobileWrapper>
-      <FirstPage
-        alreadyOpened={showFull}
-        onClickCta={() => {
-          if (showFull) {
-            scrollToQuran();
-          } else {
-            setShowFull(true);
-          }
-        }}
-      />
-      {showFull && (
-        <>
-          <QuranPage />
-          <BrideAndGroom />
-          <TimeAndPlace />
-          <Reservation
-            onCompletedCreateRecords={() => {
-              getPrayers();
-              const prayerElement = document.getElementById("prayerPage");
-              if (prayerElement) {
-                prayerElement.scrollIntoView({ behavior: "smooth" });
-              }
-            }}
-          />
-          <Prayers prayers={prayers} />
-          <Gallery />
-        </>
-      )}
-    </MobileWrapper>
+    <>
+      <AudioControl loading={isAudioLoading} />
+      <MobileWrapper>
+        <FirstPage
+          audioLoading={isAudioLoading}
+          alreadyOpened={showFull}
+          onClickCta={() => {
+            playAudio();
+            if (showFull) {
+              scrollToQuran();
+            } else {
+              setShowFull(true);
+            }
+          }}
+        />
+        {showFull && (
+          <>
+            <QuranPage />
+            <BrideAndGroom />
+            <TimeAndPlace />
+            <Reservation
+              onCompletedCreateRecords={() => {
+                getPrayers();
+                const prayerElement = document.getElementById("prayerPage");
+                if (prayerElement) {
+                  prayerElement.scrollIntoView({ behavior: "smooth" });
+                }
+              }}
+            />
+            <Prayers prayers={prayers} />
+            <Gallery />
+          </>
+        )}
+      </MobileWrapper>
+    </>
   );
 };
 

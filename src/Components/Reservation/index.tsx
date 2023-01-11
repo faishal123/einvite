@@ -236,6 +236,7 @@ const Reservation: React.FC<ReservationPropTypes> = ({
             </div>
           </div>
           <Button
+            loading={isLoading}
             disabled={isLoading}
             text="KIRIM"
             variant="white"

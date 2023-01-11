@@ -14,11 +14,13 @@ function useQuery() {
 type FirstPagePropTypes = {
   onClickCta: () => void;
   alreadyOpened: boolean;
+  audioLoading?: boolean;
 };
 
 const FirstPage: React.FC<FirstPagePropTypes> = ({
   onClickCta,
   alreadyOpened,
+  audioLoading = false,
 }) => {
   const { style } = useContext(AppContext);
   const { supported, backgroundPositionX, backgroundPositionY } =
@@ -92,6 +94,7 @@ const FirstPage: React.FC<FirstPagePropTypes> = ({
       </div>
       <div className={css.greyBackground2}>
         <Button
+          loading={audioLoading}
           width="80%"
           text={`${alreadyOpened ? "LIHAT" : "BUKA"} UNDANGAN`}
           onClick={onClickCta}
