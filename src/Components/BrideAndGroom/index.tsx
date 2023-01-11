@@ -90,13 +90,15 @@ const BrideAndGroom = () => {
       >
         &
       </div>
-      <Person
-        fullName="Faishal Abdur Rahman S.T."
-        gender="m"
-        father="Bpk. Ir. Mohamad Tantowi Mustofa"
-        mother="Ibu Maratus Sholichah"
-        photo={photoFaishal}
-      />
+      <div className="margin--xxxxxlarge-b">
+        <Person
+          fullName="Faishal Abdur Rahman S.T."
+          gender="m"
+          father="Bpk. Ir. Mohamad Tantowi Mustofa"
+          mother="Ibu Maratus Sholichah"
+          photo={photoFaishal}
+        />
+      </div>
     </div>
   );
 };

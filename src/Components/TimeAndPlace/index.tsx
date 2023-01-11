@@ -72,14 +72,16 @@ const TimeAndPlace = () => {
           </div>
         </div>
       </div>
-      <a
-        href="https://goo.gl/maps/r1wNUV1Ki86iUYjA7"
-        rel="noreferrer"
-        target={"_blank"}
-        className="z-index-1 position-relative"
-      >
-        <Button variant="black" text="LIHAT PETA" onClick={() => null} />
-      </a>
+      <div className="margin--xlarge-b">
+        <a
+          href="https://goo.gl/maps/r1wNUV1Ki86iUYjA7"
+          rel="noreferrer"
+          target={"_blank"}
+          className="z-index-1 position-relative"
+        >
+          <Button variant="black" text="LIHAT PETA" onClick={() => null} />
+        </a>
+      </div>
       <Flower style={{ position: "absolute", top: "0", left: "-5rem" }} />
       <Flower style={{ position: "absolute", top: "20%", left: "-5rem" }} />
       <Flower style={{ position: "absolute", top: "40%", left: "-5rem" }} />

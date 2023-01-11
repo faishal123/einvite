@@ -17,7 +17,7 @@ type ReservationPropTypes = {
 const Reservation: React.FC<ReservationPropTypes> = ({
   onCompletedCreateRecords,
 }) => {
-  const { styleStatic } = useContext(AppContext);
+  const { styleStatic, firstRenderHeight } = useContext(AppContext);
   const { ref, isOverflowing } = useCheckOverflow<HTMLDivElement>();
 
   const [isLoading, setIsLoading] = useState(false);
@@ -41,7 +41,7 @@ const Reservation: React.FC<ReservationPropTypes> = ({
 
   const containerStyle = {
     overflowing: {
-      minHeight: "100vh",
+      minHeight: firstRenderHeight,
     },
     notOverflowing: {
       ...styleStatic,
@@ -163,7 +163,7 @@ const Reservation: React.FC<ReservationPropTypes> = ({
           RESERVASI
         </div>
         <div
-          className={`font-family-bodoni-moda font-weight-medium font-size-15 font-letter-spacing-1 margin--small-t padding--large-l padding--large-r font-align-center font-line-height-small`}
+          className={`font-family-neuton font-size-15 font-letter-spacing-1 margin--small-t padding--large-l padding--large-r font-align-center font-line-height-small`}
         >
           Untuk mencegah penyebaran virus COVID-19, kami mengharapkan konfirmasi
           kedatangan Anda pada form berikut:

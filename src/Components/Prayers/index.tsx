@@ -33,8 +33,8 @@ const Prayers: React.FC<PrayersPropTypes> = ({ prayers }) => {
       {prayers?.length > 0 && (
         <>
           <div className="margin--large-b margin--xlarge-t font-family-neuton font-size-18 font-letter-spacing-2 font-base-white font-align-justify">
-            Sebuah Kebahagian yang sangat dalam bagi kami apabila
-            Bapak/Ibu/Saudara/i semua turut mendoakan pada hari bahagia kami.
+            Sebuah kebahagian yang sangat dalam bagi kami apabila
+            Bapak/Ibu/ Saudara/i semua turut mendoakan pada hari bahagia kami.
           </div>
           <div className={css.prayersContainer}>
             {prayers?.map((prayer, i) => {
