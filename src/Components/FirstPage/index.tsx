@@ -94,7 +94,7 @@ const FirstPage: React.FC<FirstPagePropTypes> = ({
       </div>
       <div className={css.greyBackground2}>
         <Button
-          loading={audioLoading}
+          // loading={audioLoading}
           width="80%"
           text={`${alreadyOpened ? "LIHAT" : "BUKA"} UNDANGAN`}
           onClick={onClickCta}
