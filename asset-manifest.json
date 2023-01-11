@@ -1,9 +1,9 @@
 {
   "files": {
-    "main.css": "/einvite/static/css/main.0a8813a2.css",
-    "main.js": "/einvite/static/js/main.b42980cb.js",
+    "main.css": "/einvite/static/css/main.352912a5.css",
+    "main.js": "/einvite/static/js/main.00c653da.js",
     "static/js/787.28cb0dcd.chunk.js": "/einvite/static/js/787.28cb0dcd.chunk.js",
-    "static/media/cover.mp4": "/einvite/static/media/cover.672c5d6353af6c61196f.mp4",
+    "static/media/cover.gif": "/einvite/static/media/cover.f7b405ba2bb69fa75f06.gif",
     "static/media/2.jpeg": "/einvite/static/media/2.6e27db0149f2b489b8aa.jpeg",
     "static/media/7.jpeg": "/einvite/static/media/7.2271ce43e447fd6f8478.jpeg",
     "static/media/4.jpeg": "/einvite/static/media/4.d0d75b7accbcd5325b98.jpeg",
@@ -24,12 +24,12 @@
     "static/media/mask.svg": "/einvite/static/media/mask.6af573cffe9bf4b401811e8701916c2e.svg",
     "static/media/joyellaInstagram.svg": "/einvite/static/media/joyellaInstagram.6dfe192e94bf970a75da074510b9d144.svg",
     "index.html": "/einvite/index.html",
-    "main.0a8813a2.css.map": "/einvite/static/css/main.0a8813a2.css.map",
-    "main.b42980cb.js.map": "/einvite/static/js/main.b42980cb.js.map",
+    "main.352912a5.css.map": "/einvite/static/css/main.352912a5.css.map",
+    "main.00c653da.js.map": "/einvite/static/js/main.00c653da.js.map",
     "787.28cb0dcd.chunk.js.map": "/einvite/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0a8813a2.css",
-    "static/js/main.b42980cb.js"
+    "static/css/main.352912a5.css",
+    "static/js/main.00c653da.js"
   ]
 }
