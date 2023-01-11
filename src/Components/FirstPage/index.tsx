@@ -1,9 +1,10 @@
-import React, { useContext } from "react";
+import React, { useContext, useRef } from "react";
 import { useGyroscope } from "../../Utils/gyroscope";
 import { useLocation } from "react-router-dom";
 import Button from "../Button";
 import { AppContext } from "../../Utils/context";
 import Flower from "../Flower";
+import coverVideo from "../../Images/cover.mp4";
 import css from "./FirstPage.module.scss";
 
 function useQuery() {
@@ -30,8 +31,13 @@ const FirstPage: React.FC<FirstPagePropTypes> = ({
   const name = (query.get("name") || "Yang Bersangkutan")?.toUpperCase();
 
   return (
-    <div style={{ ...style }}>
-      <div className={css.imageContainer}></div>
+    <div style={{ ...style }} className={css.container}>
+      <div className={css.imageContainer}>
+        <div className={css.videoOverlay}></div>
+        <video autoPlay muted loop>
+          <source src={coverVideo} type="video/mp4" />
+        </video>
+      </div>
       <div className={css.greyBackground1}>
         <div className={css.textPosition}>
           <div className="basic-text-shadow-3 font-family-bodoni-moda font-size-15 margin--xlarge-b font-base-white font-letter-spacing-3">
