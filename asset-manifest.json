@@ -1,22 +1,23 @@
 {
   "files": {
-    "main.css": "/einvite/static/css/main.db35fc37.css",
-    "main.js": "/einvite/static/js/main.94a2cdfc.js",
+    "main.css": "/einvite/static/css/main.c327802b.css",
+    "main.js": "/einvite/static/js/main.c12a7ccc.js",
     "static/js/787.28cb0dcd.chunk.js": "/einvite/static/js/787.28cb0dcd.chunk.js",
     "static/media/cover.gif": "/einvite/static/media/cover.f7b405ba2bb69fa75f06.gif",
+    "static/media/bgm2.mp3": "/einvite/static/media/bgm2.9d10448b7f893cedd0ed.mp3",
     "static/media/bgm.mp3": "/einvite/static/media/bgm.8495236d2aebf35c6b19.mp3",
     "static/media/2.jpeg": "/einvite/static/media/2.6e27db0149f2b489b8aa.jpeg",
     "static/media/7.jpeg": "/einvite/static/media/7.2271ce43e447fd6f8478.jpeg",
     "static/media/4.jpeg": "/einvite/static/media/4.d0d75b7accbcd5325b98.jpeg",
     "static/media/flower1.svg": "/einvite/static/media/flower1.27cf74a4d259ef7ed4e14300225f0d1b.svg",
     "static/media/3.jpeg": "/einvite/static/media/3.f072cecb0485b65f0003.jpeg",
-    "static/media/vidya-cropped.jpeg": "/einvite/static/media/vidya-cropped.8d8203c66748b9d4876c.jpeg",
+    "static/media/vidya.jpeg": "/einvite/static/media/vidya.2078cc0d44cbcdbe7f8f.jpeg",
     "static/media/5.jpeg": "/einvite/static/media/5.e6aaca900b8fa129cda8.jpeg",
     "static/media/1.jpeg": "/einvite/static/media/1.5080dc4bf8d991bc8d57.jpeg",
     "static/media/6.jpeg": "/einvite/static/media/6.91f1561713e968b74f90.jpeg",
     "static/media/8.jpeg": "/einvite/static/media/8.e2d278f007abcee36fa4.jpeg",
     "static/media/9.jpeg": "/einvite/static/media/9.78b3f6ab45836136c67b.jpeg",
-    "static/media/faishal-cropped.jpg": "/einvite/static/media/faishal-cropped.efc29c9269ae97d9a037.jpg",
+    "static/media/faishal.jpeg": "/einvite/static/media/faishal.4de9370b7ffc1eb048af.jpeg",
     "static/media/temperature.svg": "/einvite/static/media/temperature.8df96c3f0b4281b737d2b742cab46bf3.svg",
     "static/media/washhand.svg": "/einvite/static/media/washhand.03aa226c6c56400f8975cecb6810c0bf.svg",
     "static/media/distance.svg": "/einvite/static/media/distance.9ffff031586225266852e71fb33279b4.svg",
@@ -26,12 +27,12 @@
     "static/media/mask.svg": "/einvite/static/media/mask.6af573cffe9bf4b401811e8701916c2e.svg",
     "static/media/joyellaInstagram.svg": "/einvite/static/media/joyellaInstagram.6dfe192e94bf970a75da074510b9d144.svg",
     "static/media/musicIcon.svg": "/einvite/static/media/musicIcon.31de8c140cfee958606349f50eb83430.svg",
-    "main.db35fc37.css.map": "/einvite/static/css/main.db35fc37.css.map",
-    "main.94a2cdfc.js.map": "/einvite/static/js/main.94a2cdfc.js.map",
+    "main.c327802b.css.map": "/einvite/static/css/main.c327802b.css.map",
+    "main.c12a7ccc.js.map": "/einvite/static/js/main.c12a7ccc.js.map",
     "787.28cb0dcd.chunk.js.map": "/einvite/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.db35fc37.css",
-    "static/js/main.94a2cdfc.js"
+    "static/css/main.c327802b.css",
+    "static/js/main.c12a7ccc.js"
   ]
 }
