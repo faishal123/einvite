@@ -11,7 +11,7 @@ const VidyaAndFaishal = () => {
     backgroundPositionY,
     askPermission,
     allowed,
-  } = useGyroscope();
+  } = useGyroscope({ useVerticalAxis: true });
 
   useDebounce(`${clicked}`, 1000, () => {
     setClicked(0);

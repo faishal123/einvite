@@ -25,8 +25,9 @@ const Button: React.FC<ButtonPropTypes> = ({
   width = "100%",
   loading = false,
 }) => {
-  const { supported, backgroundPositionX, backgroundPositionY } =
-    useGyroscope();
+  const { supported, backgroundPositionX, backgroundPositionY } = useGyroscope({
+    useVerticalAxis: true,
+  });
   const supportAccelerometer = supported;
   return (
     <button

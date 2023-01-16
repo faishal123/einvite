@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
 
-export const useGyroscope = () => {
+type UseGyroscopeParam = {
+  useVerticalAxis: boolean;
+};
+
+export const useGyroscope = ({ useVerticalAxis }: UseGyroscopeParam) => {
   const [allowed, setAllowed] = useState(false);
 
   const checkPermission = () => {
@@ -64,15 +68,24 @@ export const useGyroscope = () => {
     accelerometerY = (((accelerometerData?.beta || 0) + 90) / 180) * 100;
   }
 
+  const defineBackgroundPositionX = () => {
+    if (useVerticalAxis) {
+      const verticalAxisCompensation =
+        (((accelerometerData?.beta || 0) + 90) / 180) * 20 - 15;
+      return supportAccelerometer
+        ? `${accelerometerX + verticalAxisCompensation}%`
+        : undefined;
+    }
+    return supportAccelerometer ? `${accelerometerX}%` : undefined;
+  };
+
   return {
     gamma: accelerometerData?.gamma,
     beta: accelerometerData?.beta,
     x: accelerometerX,
     y: accelerometerY,
     supported: supportAccelerometer,
-    backgroundPositionX: supportAccelerometer
-      ? `${accelerometerX}%`
-      : undefined,
+    backgroundPositionX: defineBackgroundPositionX(),
     backgroundPositionY: supportAccelerometer
       ? `${accelerometerY}%`
       : undefined,
