@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import { useGyroscope } from "../../Utils/gyroscope";
 import Button from "../Button";
 import { AppContext } from "../../Utils/context";
 import Flower from "../Flower";
