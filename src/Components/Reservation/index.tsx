@@ -165,8 +165,7 @@ const Reservation: React.FC<ReservationPropTypes> = ({
         <div
           className={`font-family-neuton font-size-15 font-letter-spacing-1 margin--small-t padding--large-l padding--large-r font-align-center font-line-height-small`}
         >
-          Untuk mencegah penyebaran virus COVID-19, kami mengharapkan konfirmasi
-          kedatangan Anda pada form berikut:
+          Kami mengharapkan konfirmasi kedatangan Anda pada form berikut:
         </div>
         <div className={css.formContainer}>
           <div className="margin--large-b">
