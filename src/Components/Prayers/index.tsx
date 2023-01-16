@@ -60,8 +60,7 @@ const Prayers: React.FC<PrayersPropTypes> = ({ prayers }) => {
       )}
       <div className="font-base-white margin--xxxlarge-t font-align-justify font-letter-spacing-2 font-family-neuton font-size-18">
         Dengan tidak mengurangi rasa hormat kami, untuk menjaga kesehatan kita
-        semua serta tetap mengikuti protokol kesehatan yang berlaku dimasa
-        pandemi. Semoga kita semua senantiasa diberikan kesehatan & kebahagiaan,
+        semua serta tetap mengikuti protokol kesehatan. Semoga kita semua senantiasa diberikan kesehatan & kebahagiaan,
         Amin.
       </div>
       <div className={css.covidCautionContainer}>
