@@ -1,32 +1,22 @@
 import React, { useContext } from "react";
 import { useGyroscope } from "../../Utils/gyroscope";
-import { useLocation } from "react-router-dom";
 import Button from "../Button";
 import { AppContext } from "../../Utils/context";
 import Flower from "../Flower";
+import { useQuery } from "../../Utils/url";
 import css from "./FirstPage.module.scss";
-
-function useQuery() {
-  const { search } = useLocation();
-  return React.useMemo(() => new URLSearchParams(search), [search]);
-}
+import VidyaAndFaishal from "./VidyaAndFaishal";
 
 type FirstPagePropTypes = {
   onClickCta: () => void;
   alreadyOpened: boolean;
-  audioLoading?: boolean;
 };
 
 const FirstPage: React.FC<FirstPagePropTypes> = ({
   onClickCta,
   alreadyOpened,
-  audioLoading = false,
 }) => {
   const { style } = useContext(AppContext);
-  const { supported, backgroundPositionX, backgroundPositionY } =
-    useGyroscope();
-
-  const supportAccelerometer = supported;
 
   const query = useQuery();
   const name = (query.get("name") || "Yang Bersangkutan")?.toUpperCase();
@@ -61,26 +51,7 @@ const FirstPage: React.FC<FirstPagePropTypes> = ({
                 bottom: "0rem",
               }}
             />
-            <div
-              id="animated-text"
-              style={{
-                backgroundSize: supportAccelerometer ? "300%" : undefined,
-                backgroundPositionX,
-                backgroundPositionY,
-              }}
-              className={`font-family-great-vibes ${css.textContainer} ${
-                !supportAccelerometer ? css.textShine : css.textGradient
-              }`}
-            >
-              <div className="font-size-56 margin--medium-b">Vidya</div>
-              <div className="font-size-32 margin--medium-b">&</div>
-              <div className="font-size-56">Faishal</div>
-            </div>
-            <div className={`font-family-great-vibes ${css.textShadow}`}>
-              <div className="font-size-56 margin--medium-b">Vidya</div>
-              <div className="font-size-32 margin--medium-b">&</div>
-              <div className="font-size-56">Faishal</div>
-            </div>
+            <VidyaAndFaishal />
           </div>
         </div>
       </div>

@@ -1,14 +1,22 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import css from "./AudioControl.module.scss";
 import musicIcon from "../../Images/musicIcon.svg";
+import { useQuery } from "../../Utils/url";
 import bgm from "../../Images/bgm.mp3";
+import bgm2 from "../../Images/bgm2.mp3";
 import Loader from "../Loader";
 
 type AudioControlPropTypes = {
   loading?: boolean;
 };
 
+const bgms = [bgm, bgm2];
+
 const AudioControl: React.FC<AudioControlPropTypes> = ({ loading = false }) => {
+  const query = useQuery();
+  const bgmIndex = Number(query.get("bgm") || "1");
+  const bgmToPlay = bgms?.[bgmIndex - 1] || bgm;
+
   const [isPlaying, setIsPlaying] = useState(false);
 
   const bgmElement = document.getElementById(
@@ -42,10 +50,27 @@ const AudioControl: React.FC<AudioControlPropTypes> = ({ loading = false }) => {
     };
   }
 
+  const getBgm = () => {
+    return document.getElementById("backgroundMusic") as HTMLAudioElement;
+  };
+
+  const playMusicOnScroll = () => {
+    if (getBgm().currentTime <= 0) {
+      getBgm().play();
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", playMusicOnScroll);
+    return () => {
+      window.removeEventListener("scroll", playMusicOnScroll);
+    };
+  }, []);
+
   return (
     <>
       <audio preload="auto" id="backgroundMusic" loop>
-        <source src={bgm} type="audio/mpeg" />
+        <source src={bgmToPlay} type="audio/mpeg" />
       </audio>
       <div
         className={css.container}

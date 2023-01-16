@@ -14,13 +14,10 @@ import { SinglePrayerType } from "../../Utils/types";
 const Home = () => {
   const [showFull, setShowFull] = useState(false);
   const [prayers, setPrayers] = useState<SinglePrayerType[]>([]);
-  // const [isAudioLoading, setIsAudioLoading] = useState(false);
 
   const bgmElement = document.getElementById(
     "backgroundMusic"
   ) as HTMLAudioElement;
-
-  console.log(bgmElement?.readyState);
 
   const isAudioLoading = bgmElement?.readyState !== 4;
 
@@ -55,21 +52,13 @@ const Home = () => {
     }
   }, [showFull]);
 
-  const playAudio = () => {
-    if (bgmElement) {
-      bgmElement.play();
-    }
-  };
-
   return (
     <>
       <AudioControl loading={isAudioLoading} />
       <MobileWrapper>
         <FirstPage
-          audioLoading={isAudioLoading}
           alreadyOpened={showFull}
           onClickCta={() => {
-            playAudio();
             if (showFull) {
               scrollToQuran();
             } else {

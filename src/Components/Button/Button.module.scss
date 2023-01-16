@@ -53,6 +53,8 @@
   &:hover {
     animation: shine 2s infinite;
     -webkit-animation: shine 2s infinite;
+    -moz-animation: shine 2s infinite;
+    -o-animation: shine 2s infinite;
     > div {
       transition: 0.2s;
       opacity: 0.9;

@@ -47,16 +47,25 @@ const TimeAndPlace = () => {
 
   return (
     <div
-      className={`position-relative ${css.container}`}
+      className={`position-relative z-index-1 ${css.container}`}
       style={{ minHeight: firstRenderHeight }}
     >
-      <div className="z-index-1 position-relative margin--xxxxxlarge-b font-letter-spacing-3 font-family-bodoni-moda font-weight-medium font-size-28">
+      <div className="z-index-1 position-relative margin--xlarge-b font-letter-spacing-3 font-family-bodoni-moda font-weight-medium font-size-28">
         <div>MINGGU</div>
         <div>19 MARET 2023</div>
       </div>
       <Countdown />
+      <div className="margin--xxlarge-t z-index-1 position-relative">
+        <a
+          rel="noreferrer"
+          target={"_blank"}
+          href="https://calendar.google.com/calendar/render?action=TEMPLATE&dates=20230319T030000Z%2F20230319T050000Z&details=Vidya%20%26%20Faishal%27s%20Wedding%20Celebration&location=Graha%20Samudra%20Bumimoro&text=Vidya%20%26%20Faishal%27s%20Wedding"
+        >
+          <Button text="SIMPAN TANGGAL" onClick={() => null} />
+        </a>
+      </div>
       <div className="font-family-bodoni-moda z-index-1 position-relative">
-        <div className="margin--xxxxxlarge-b margin--xxxxxlarge-t">
+        <div className="margin--xxxxxlarge-b margin--xxxxxxxlarge-t">
           <div className={titleClassname}>Akad Nikah</div>
           <div className={subtitleClassname}>08:00 - 09:00 WIB</div>
         </div>
@@ -64,7 +73,7 @@ const TimeAndPlace = () => {
           <div className={titleClassname}>Resepsi</div>
           <div className={subtitleClassname}>10:00 - 12:00 WIB</div>
         </div>
-        <div className="margin--xxxxxlarge-b">
+        <div className="margin--xxlarge-b">
           <div className={titleClassname}>GRAHA SAMUDRA BUMIMORO</div>
           <div className={"font-size-15 font-letter-spacing-2"}>
             Kobangdikal, Jl. Moro Krembangan, Morokrembangan, Kec. Krembangan,

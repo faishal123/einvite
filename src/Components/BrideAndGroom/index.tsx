@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import { AppContext } from "../../Utils/context";
 import Photo from "./Photo";
-import photoVidya from "../../Images/vidya-cropped.jpeg";
+import photoVidya from "../../Images/vidya.jpeg";
 import Flower from "../Flower";
-import photoFaishal from "../../Images/faishal-cropped.jpg";
+import photoFaishal from "../../Images/faishal.jpeg";
 import css from "./BrideAndGroom.module.scss";
 
 type PersonPropTypes = {

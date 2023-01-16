@@ -114,3 +114,22 @@ export const useTimer = ({ endDate }: UserTimerParameter) => {
   }
   return timeLeft;
 };
+
+export function useDebounce(val: string, delay: number, callback?: () => void) {
+  const [debouncedVal, setDebouncedVal] = useState(val);
+  useEffect(() => {
+    const timeOutHandler = setTimeout(() => {
+      if (callback) {
+        callback();
+      }
+      setDebouncedVal(val);
+    }, delay);
+    return () => clearTimeout(timeOutHandler);
+  }, [delay, val]);
+
+  if (typeof debouncedVal === "string") {
+    return debouncedVal?.toLowerCase();
+  }
+
+  return debouncedVal;
+}

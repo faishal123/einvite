@@ -3,26 +3,35 @@ import { useEffect, useState } from "react";
 export const useGyroscope = () => {
   const [allowed, setAllowed] = useState(false);
 
+  const checkPermission = () => {
+    if (
+      typeof (DeviceOrientationEvent as any).requestPermission === "function"
+    ) {
+      setAllowed(false);
+    } else {
+      setAllowed(true);
+    }
+  };
+
   const askPermission = () => {
     if (
       typeof (DeviceOrientationEvent as any).requestPermission === "function"
     ) {
-      // (DeviceOrientationEvent as any)
-      //   .requestPermission()
-      //   .then((permissionState: string) => {
-      //     if (permissionState === "granted") {
-      //       setAllowed(true);
-      //       window.addEventListener("deviceorientation", (e) => {
-      //         setAccelerometerData(e);
-      //       });
-      //     } else {
-      //       setAllowed(false);
-      //     }
-      //   })
-      //   .catch(() => {
-      //     setAllowed(false);
-      //   });
-      setAllowed(false);
+      (DeviceOrientationEvent as any)
+        .requestPermission()
+        .then((permissionState: string) => {
+          if (permissionState === "granted") {
+            setAllowed(true);
+            window.addEventListener("deviceorientation", (e) => {
+              setAccelerometerData(e);
+            });
+          } else {
+            setAllowed(false);
+          }
+        })
+        .catch(() => {
+          setAllowed(false);
+        });
     } else {
       setAllowed(true);
     }
@@ -33,7 +42,7 @@ export const useGyroscope = () => {
   const [accelerometerData, setAccelerometerData] =
     useState<DeviceOrientationEvent | null>(null);
   useEffect(() => {
-    askPermission();
+    checkPermission();
     window.addEventListener("deviceorientation", (e) => {
       setAccelerometerData(e);
     });
@@ -43,6 +52,9 @@ export const useGyroscope = () => {
     accelerometerData?.alpha !== null &&
     accelerometerData?.beta !== null &&
     accelerometerData?.gamma !== null &&
+    accelerometerData?.alpha !== undefined &&
+    accelerometerData?.beta !== undefined &&
+    accelerometerData?.gamma !== undefined &&
     allowed;
 
   let accelerometerX = 0;
@@ -64,5 +76,7 @@ export const useGyroscope = () => {
     backgroundPositionY: supportAccelerometer
       ? `${accelerometerY}%`
       : undefined,
+    askPermission,
+    allowed,
   };
 };
