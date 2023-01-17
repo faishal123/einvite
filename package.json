@@ -28,7 +28,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "cross-env GENERATE_SOURCEMAP=false react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
@@ -53,5 +53,8 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://faishal123.github.io/einvite"
+  "homepage": "https://faishal123.github.io/einvite",
+  "devDependencies": {
+    "cross-env": "^7.0.3"
+  }
 }
