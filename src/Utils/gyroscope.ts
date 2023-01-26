@@ -7,8 +7,11 @@ type UseGyroscopeParam = {
 export const useGyroscope = ({ useVerticalAxis }: UseGyroscopeParam) => {
   const [allowed, setAllowed] = useState(false);
 
+  const deviceOrientationExist = typeof DeviceOrientationEvent !== "undefined";
+
   const checkPermission = () => {
     if (
+      deviceOrientationExist &&
       typeof (DeviceOrientationEvent as any).requestPermission === "function"
     ) {
       setAllowed(false);
@@ -19,6 +22,7 @@ export const useGyroscope = ({ useVerticalAxis }: UseGyroscopeParam) => {
 
   const askPermission = () => {
     if (
+      deviceOrientationExist &&
       typeof (DeviceOrientationEvent as any).requestPermission === "function"
     ) {
       (DeviceOrientationEvent as any)
